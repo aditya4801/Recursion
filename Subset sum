@@ -1,0 +1,24 @@
+class solution{
+public:
+void func(int ind,int sum,vector<int>&arr,int N, vector<int>&sumSubset){
+if(ind==N){
+sumSubset.push_back(sum);
+return;
+}
+
+// If element is picked
+func(ind+1,sum+arr[ind},N,sumsubset);
+
+//If element is not picked
+func(ind+1,sum,N,sumSubset);
+}
+vector<int>subsetSum(vector<int>arr,int N){
+
+ vector<int>sumSubset;
+ func(0,0,arr,N,sumSubset);
+ sort(sumSubset.begin(), sumSubset.end());
+ 
+ return sumSubset;
+}
+
+};
